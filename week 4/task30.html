@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Field and Button</title>
+</head>
+<body>
+
+<h1>Simple Input Example</h1>
+<input type="text" id="myInput" placeholder="Type something..." onchange="logChange()">
+<button id="myButton" onclick="showAlert()">Show Alert</button>
+
+<script>
+    function logChange() {
+        const inputField = document.getElementById('myInput');
+        console.log("Input changed to: " + inputField.value);
+    }
+
+    function showAlert() {
+        const inputField = document.getElementById('myInput');
+        alert("You entered: " + inputField.value);
+    }
+</script>
+
+</body>
+</html>

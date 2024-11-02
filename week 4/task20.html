@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Selection Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Welcome to My Webpage</h1>
+    <p class="description">This is a simple paragraph to describe the content of the page.</p>
+    <p class="description">Here is another paragraph with some more information.</p>
+    
+    <ul class="item-list">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+    </ul>
+
+    <button id="my-button">Click Me!</button>
+
+    <script>
+    
+        const titleElement = document.getElementById('main-title');
+        console.log('Element by ID:', titleElement);
+        const descriptionElements = document.getElementsByClassName('description');
+        console.log('Elements by Class Name:', descriptionElements);
+        const listItems = document.getElementsByTagName('li');
+        console.log('Elements by Tag Name:', listItems);
+
+       
+        Array.from(descriptionElements).forEach((element, index) => {
+            console.log(`Description Paragraph ${index + 1}:`, element);
+        });
+
+        Array.from(listItems).forEach((item, index) => {
+            console.log(`List Item ${index + 1}:`, item);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .gallery {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .product {
+            border: 1px solid #f54387;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product-details {
+            display: none;
+            border: 1px solid #333;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Product Gallery</h1>
+<div class="gallery" id="gallery"></div>
+<div id="productDetails" class="product-details"></div>
+
+<script>
+class Product {
+    constructor(name, description, price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+}
+
+// Sample product data
+const products = [
+    new Product('Product 1', 'This is a description for Product 1.', 59.99),
+    new Product('Product 2', 'This is a description for Product 2.', 139.99),
+    new Product('Product 3', 'This is a description for Product 3.', 469.99),
+    new Product('Product 4', 'This is a description for Product 4.', 1989.99)
+];
+
+// Function to display the products in the gallery
+function displayProducts() {
+    const gallery = document.getElementById('gallery');
+    products.forEach((product, index) => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.innerText = product.name;
+        productDiv.onclick = () => showProductDetails(index);
+        gallery.appendChild(productDiv);
+    });
+}
+
+
+function showProductDetails(index) {
+    const product = products[index];
+    const detailsDiv = document.getElementById('productDetails');
+    detailsDiv.innerHTML = `
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <p><strong>Price: $${product.price.toFixed(2)}</strong></p>
+    `;
+    detailsDiv.style.display = 'block';
+}
+displayProducts();
+</script>
+
+</body>
+</html>

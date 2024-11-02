@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Attributes</title>
+    <style>
+        input {
+            margin: 10px 0;
+            padding: 8px;
+            width: 200px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Form Example</h1>
+    <form id="my-form">
+        <input type="text" id="name" placeholder="Enter your name" /><br><br>
+        <input type="email" id="email" placeholder="Enter your email" /><br><br>
+        <input type="text" id="age" placeholder="Enter your age" /><br><br>
+        <button type="button" id="change-attributes-button">Change Placeholders</button>
+    </form>
+
+    <script>
+       
+        function changePlaceholderText() {
+            document.getElementById('name').setAttribute('placeholder', 'Name Changed');
+            document.getElementById('email').setAttribute('placeholder', 'Email Changed');
+            document.getElementById('age').setAttribute('placeholder', 'Age Changed');
+        }
+        const button = document.getElementById('change-attributes-button');
+        button.addEventListener('click', changePlaceholderText);
+    </script>
+</body>
+</html>

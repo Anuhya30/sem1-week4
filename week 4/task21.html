@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Paragraph Background Color</title>
+    <style>
+        p {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Webpage</h1>
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+    <p>This is the third paragraph.</p>
+    <button id="change-color-button">Change Background Color</button>
+
+    <script>
+        
+        function changeParagraphBackgroundColor() {
+        
+            const paragraphs = document.querySelectorAll('p');
+           
+            paragraphs.forEach(paragraph => {
+                paragraph.style.backgroundColor = 'lightblue';
+            });
+        }
+
+       
+        const button = document.getElementById('change-color-button');
+        button.addEventListener('click', changeParagraphBackgroundColor);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Inclusion Example</title>
+    
+    <script src="external.js"></script> 
+    <script>
+        
+        console.log("Internal JavaScript is loaded.");
+    </script>
+</head>
+<body>
+    <h1>JavaScript Inclusion Types</h1>
+    <button onclick="inlineFunction()">Click Me!</button>
+
+    <script>
+        
+        function inlineFunction() {
+            console.log("Inline JavaScript function is executed.");
+        }
+    </script>
+</body>
+</html>

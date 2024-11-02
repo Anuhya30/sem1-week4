@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove Paragraph</title>
+</head>
+<body>
+    <h1>Dynamic Paragraph Example</h1>
+    <button id="add-paragraph-button">Add Paragraph</button>
+
+    <script>
+        
+        function createAndRemoveParagraph() {
+          
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'This is a dynamically added paragraph.';
+            newParagraph.style.border = '1px solid #ccc';
+            newParagraph.style.padding = '10px';
+            newParagraph.style.margin = '10px 0';
+
+            document.body.appendChild(newParagraph);
+
+            setTimeout(() => {
+                newParagraph.remove();
+            }, 3000);
+        }
+
+      
+        const button = document.getElementById('add-paragraph-button');
+        button.addEventListener('click', createAndRemoveParagraph);
+    </script>
+</body>
+</html>
